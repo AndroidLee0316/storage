@@ -1,0 +1,24 @@
+
+ext {
+    versionName = "1.0.0"
+    versionCode = 100
+
+    // Sdk and tools
+    minSdkVersion = 21
+    targetSdkVersion = 30
+    compileSdkVersion = 30
+    buildToolsVersion = '30.0.3'
+
+    // App dependencies
+    dbflowVersion = '4.2.4'
+    supportLibraryVersion = '27.1.1'
+    constraint_layout = '1.1.2'
+    rxJava2Version = '2.1.12'
+    rxAndroidVersion = '2.0.2'
+    gsonVersion = '2.8.2'
+    if(uploadRelease=='false'){
+        aarLibStorageVersion = '1.0.8-SNAPSHOT'
+    }else{
+        aarLibStorageVersion = '1.1.0'
+    }
+}

@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+apply from: 'uploadArchives.gradle'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+
+    api "com.github.Raizlabs.DBFlow:dbflow-core:4.2.4"
+    annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:4.2.4"
+    api "com.github.Raizlabs.DBFlow:dbflow:4.2.4"
+    api("com.github.Raizlabs.DBFlow:dbflow-rx2:4.2.4") {
+        exclude module: 'rxjava'
+    }
+    implementation "com.github.Raizlabs.DBFlow:dbflow-sqlcipher:4.2.4"
+    implementation "net.zetetic:android-database-sqlcipher:3.5.9@aar"
+
+    api "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxAndroidVersion}"
+    api "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxJava2Version}"
+    api "com.google.code.gson:gson:${rootProject.ext.gsonVersion}"
+
+}

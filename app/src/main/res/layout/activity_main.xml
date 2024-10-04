@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tvDb"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="add"
+        android:gravity="center"
+        android:text="添加"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <Button
+        android:onClick="delete"
+        android:gravity="center"
+        android:text="删除"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <Button
+        android:onClick="query"
+        android:gravity="center"
+        android:text="查询"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <Button
+        android:onClick="insetDb"
+        android:gravity="center"
+        android:text="插入数据库"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <Button
+        android:onClick="queryDb"
+        android:gravity="center"
+        android:text="查询数据库"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <CheckBox
+        android:id="@+id/check"
+        android:layout_width="wrap_content"
+        android:text="switchDb"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

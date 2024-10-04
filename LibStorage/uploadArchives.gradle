@@ -1,0 +1,33 @@
+// 发布maven配置
+apply plugin: 'maven'
+uploadArchives{
+    repositories.mavenDeployer{
+        pom.groupId = "com.zxs.lib"// 唯一标识（通常为模块包名，也可以任意）
+        pom.artifactId = "storage" // 项目名称（通常为类库模块名称，也可以任意）
+        pom.version = "1.0.0" // 版本号
+        // 配置本地仓库路径，项目根目录下的repository目录中
+        repository(url: uri('E:/zxsCode/maven'))
+    }
+}
+
+
+
+//
+//apply plugin: 'maven-publish'
+////apply from: 'uploadArchives_release.gradle'
+////根据properties中设置的参数来选择不同的上传脚本
+//apply plugin: 'com.github.dcendents.android-maven'//this
+//group='com.github.AndroidLee0316'//this
+//version = "storage_1.0.0"//this
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                groupId = 'com.pasc.lib'
+//                artifactId = 'storage'
+//                version = '1.0.0'
+//            }
+//        }
+//    }
+//}
+
